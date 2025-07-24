@@ -1,0 +1,216 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> tienda de compus  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url('https://scontent.faqb1-1.fna.fbcdn.net/v/t39.30808-6/486995900_1218644282965600_171074262652691042_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=X0T8mi6jci8Q7kNvwHBwwrl&_nc_oc=AdlBC8RT7Iot2cbbaV2-9PZSz3flhvp2Gxy_yoWVK96FpmA_y2Pye-V8MHCq4MnxMUHUNIjTMgSotyalgawKa8ak&_nc_zt=23&_nc_ht=scontent.faqb1-1.fna&_nc_gid=Jpqyf9yiUnOh0ihyUjlHcA&oh=00_AfQx1RbBf-1R2IBHJeMi9n1J4le_c539kvykfFZyOweE3w&oe=68863A10');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Marketing: Impulso Creativo</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://scontent.fgua6-2.fna.fbcdn.net/v/t51.75761-15/495720175_18514706995011190_8761515667165832849_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zYdFLNEFCFgQ7kNvwGIotbd&_nc_oc=AdkNLVxUKCE-2OveHjoEVhQ82AuYJJfQuvDQzrFyFLf5EG6--NEh4MnXNvplGoRSPiw&_nc_zt=23&_nc_ht=scontent.fgua6-2.fna&_nc_gid=-ERnx0Ky9TcsPlnKgVjyOQ&oh=00_AfRkyz-xHlcr56LXnJh7DRh-6kTcF3xUMtPjI1Y0um1FNg&oe=68878243" alt="Vestido">
+        <h2>Atelier Prabal Gurung</h2>
+        <p><strong>Q1,000,000.00</strong></p>
+        <p>Diseño Personalizado en Color Rosa, o Variedades</p>
+        <button class="boton-compra" onclick="mostrarPopup('Vestido')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://scontent.fgua6-1.fna.fbcdn.net/v/t39.30808-6/495616050_1114987050661360_2877945784052023312_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=t3ze1vpydz8Q7kNvwEY2llY&_nc_oc=AdkPDZOAFBF8Yt9HwYc4jcOGrRovZ3QyQnAtKk1BM5tV5r4zwaeR_gnLGNyhlV5e7a8&_nc_zt=23&_nc_ht=scontent.fgua6-1.fna&_nc_gid=mQPafFKtAq1AkrPar21EUA&oh=00_AfQHp-NwyFc9F0N1MoucgbMc4TsIEKUDNu3J4s-t2tf4Kg&oe=68877BC6" alt="Vestido">
+        <h2>Superfine Tailoring Black Style</h2>
+        <p><strong>Q200,000.00</strong></p>
+        <p>Diseño: Pharrell Williams</p>
+        <button class="boton-compra" onclick="mostrarPopup('Vestido')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://scontent.fgua6-1.fna.fbcdn.net/v/t51.82787-15/517869558_18527304625011190_2115196502381666738_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=o5rFrOGKTusQ7kNvwEq_HU7&_nc_oc=Adljs2C_Zo4AjtOUUwfopgQMxK2uQsrI-GJYp2L1Kzaf7Abs1B7Dhy-TmPlHWTuzVEs&_nc_zt=23&_nc_ht=scontent.fgua6-1.fna&_nc_gid=Rhr19zmsCqRDYDlCqyE_ng&oh=00_AfRDcy56vf5BWSbF2sRp-vZ0eLQmD7TWXzTCQyKmZnobCw&oe=68876FF1" alt="Vestido">
+        <h2>Yellow Sundress: de H&M</h2>
+        <p><strong>Q99,000.00</strong></p>
+        <p>Diseño: Pierpaolo Piccioli "Valentino"</p>
+        <button class="boton-compra" onclick="mostrarPopup('Vestido')">Comprar</button>
+    </div>
+	
+	 <div class="producto">
+        <img src="https://scontent.fgua6-1.fna.fbcdn.net/v/t39.30808-6/495322980_1524639555178447_775498392049793767_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=9N8ArARYPRAQ7kNvwG5Q5k3&_nc_oc=Adl6zwvJn6YduikLuRk9jm6YMSUgxmPqWPe3QZ_PGyTnnq5Ei8poSJ_ReBVzgf7lg3k&_nc_zt=23&_nc_ht=scontent.fgua6-1.fna&_nc_gid=QAWVKGeZGiqNywWPhyy-Jg&oh=00_AfSwYESXXjxTXVNS8KadW79nVd2WMcuaHLL255soiuly4g&oe=688781CF" alt="Vestido">
+        <h2>Vestido de Arena o Reloj de Arena, "El jardín del tiempo"</h2>
+        <p><strong>Q50,000.00</strong></p>
+        <p>Diseño Personalizado: Olivier Rousteing para Balmain</p>
+        <button class="boton-compra" onclick="mostrarPopup('Vestido')">Comprar</button>
+    </div>
+	
+   <div class="producto">
+        <img src="https://scontent.fgua6-2.fna.fbcdn.net/v/t39.30808-6/495444240_1121923866644602_7775230670999158351_n.webp?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kSEMWkeBUmEQ7kNvwHYgZ_Z&_nc_oc=AdnUDaLryEp-k-eyYDlRN3USsbDTrmiDegksp_v2ZG7irQK0o22Bin8OmkCksSAKe-w&_nc_zt=23&_nc_ht=scontent.fgua6-2.fna&_nc_gid=JG6RvIBsRuXpjmX1TtPBRg&oh=00_AfRzauHQA8VR1srVQTntF9J-7j3fmtG9PiXBzpsfX64SZg&oe=68879E5A" alt="Vestido">
+        <h2>blazer de alfaiataria con transparencias y brillantes</h2>
+        <p><strong>Q1,000,000.00</strong></p>
+        <p>Diseño: Louis Vuitton</p>
+        <button class="boton-compra" onclick="mostrarPopup('Vestido')">Comprar</button>
+    </div>
+
+<div class="producto">
+        <img src="https://scontent.fgua6-2.fna.fbcdn.net/v/t39.30808-6/495017340_732494859348247_1556777413441008474_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=e8fUjcMI7jsQ7kNvwGojlWB&_nc_oc=AdkT2QteICUvyqwyXeIvrC0WV5Hlfxb42gfeC1EhUbxVG0KRod6ih-1wDTbtvrxYi00&_nc_zt=23&_nc_ht=scontent.fgua6-2.fna&_nc_gid=MLCNESc4qCP7GbDGLjcJKg&oh=00_AfTdKqbwCrWC3KW1YDWLay-ZPKUfHDwYaUHuhqocgzPPwA&oe=6887A32F" alt="Vestido">
+        <h2>loral tulle gown & Floral sheer dress</h2>
+        <p><strong>Q10,000,000.00</strong></p>
+        <p>Diseño: Glenn Martens para Diesel</p>
+        <button class="boton-compra" onclick="mostrarPopup('Vestido')">Comprar</button>
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50249967264" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:ventas@domotronic.com">📧 Correo</a>
+    <a href="tel:+50249967264">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
